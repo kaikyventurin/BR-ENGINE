@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | BR ENGINE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Loading Overlay -->
+<div id="loading-overlay">
+  <svg class="loader-logo" viewBox="0 0 80 80" fill="none">
+    <polygon points="40,6 74,22 74,58 40,74 6,58 6,22" fill="none" stroke="url(#lgc)" stroke-width="3"/>
+    <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="url(#lgc)" font-family="Orbitron,sans-serif" font-size="11" font-weight="900">BRE</text>
+    <defs><linearGradient id="lgc" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+  </svg>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <p class="loader-text">Carregando contato…</p>
+</div>
+
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <svg class="brand-logo" viewBox="0 0 60 60" fill="none">
+        <polygon points="30,4 56,16 56,44 30,56 4,44 4,16" fill="none" stroke="url(#bnc)" stroke-width="2.5"/>
+        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="url(#bnc)" font-family="Orbitron,sans-serif" font-size="9" font-weight="900">BRE</text>
+        <defs><linearGradient id="bnc" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+      </svg>
+      BR ENGINE
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContact" aria-label="Menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navContact">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#sobre">Sobre Nós</a></li>
+        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfólio</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contato.html">Contato</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <form class="nav-search d-flex" id="searchForm">
+          <input class="form-control" type="search" placeholder="Buscar…" id="searchInput">
+          <button class="btn-search" type="submit">🔍</button>
+        </form>
+        <button id="themeToggle" aria-label="Alternar tema">☀️</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div class="breadcrumb-custom mb-3">
+      <a href="index.html">Início</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Contato</span>
+    </div>
+    <h1 class="page-hero-title">Entre em Contato</h1>
+    <p class="page-hero-sub">Fale com nossa equipe e dê vida ao seu projeto</p>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="section-block">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+
+      <!-- Info Cards -->
+      <div class="col-lg-4">
+        <div class="mb-4 reveal">
+          <span class="section-tag">Atendimento</span>
+          <h2 class="section-title mt-2">Vamos <span>Conversar?</span></h2>
+          <div class="divider"></div>
+          <p class="section-desc">Entre em contato conosco. Nossa equipe responde em até 24 horas úteis.</p>
+        </div>
+
+        <div class="d-flex flex-column gap-3">
+          <div class="info-card reveal" style="transition-delay:.1s">
+            <div class="info-icon">📍</div>
+            <div>
+              <h6>Endereço</h6>
+              <p>Av. Tecnologia, 1024 — Vila Velha, ES</p>
+            </div>
+          </div>
+          <div class="info-card reveal" style="transition-delay:.2s">
+            <div class="info-icon">📧</div>
+            <div>
+              <h6>E-mail</h6>
+              <p>contato@brengine.com.br</p>
+            </div>
+          </div>
+          <div class="info-card reveal" style="transition-delay:.3s">
+            <div class="info-icon">📞</div>
+            <div>
+              <h6>Telefone</h6>
+              <p>(27) 00000-0000</p>
+            </div>
+          </div>
+          <div class="info-card reveal" style="transition-delay:.4s">
+            <div class="info-icon">🕐</div>
+            <div>
+              <h6>Horário</h6>
+              <p>Seg–Sex: 08h às 18h</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Redes -->
+        <div class="mt-4 reveal" style="transition-delay:.5s">
+          <h6 class="footer-heading">Redes Sociais</h6>
+          <div class="social-links">
+            <a class="social-link" href="#" title="Instagram">📸</a>
+            <a class="social-link" href="#" title="YouTube">▶️</a>
+            <a class="social-link" href="#" title="LinkedIn">💼</a>
+            <a class="social-link" href="#" title="GitHub">💻</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="col-lg-8 reveal" style="transition-delay:.15s">
+        <div class="contact-wrap">
+          <h3 class="section-title mb-4" style="font-size:1.4rem">Envie sua <span>Mensagem</span></h3>
+          <form id="contactForm" novalidate>
+            <div class="row g-3 mb-3">
+              <div class="col-sm-6">
+                <label class="form-label-custom">Nome Completo</label>
+                <input type="text" class="form-control-custom" placeholder="Seu nome" required>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label-custom">E-mail</label>
+                <input type="email" class="form-control-custom" placeholder="seu@email.com" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-custom">Empresa (opcional)</label>
+              <input type="text" class="form-control-custom" placeholder="Nome da sua empresa">
+            </div>
+            <div class="mb-3">
+              <label class="form-label-custom">Tipo de Projeto</label>
+              <select class="form-control-custom" style="cursor:pointer">
+                <option value="" disabled selected>Selecione…</option>
+                <option>Sistema Web</option>
+                <option>App Mobile</option>
+                <option>Cloud / Infraestrutura</option>
+                <option>Consultoria</option>
+                <option>Outro</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label class="form-label-custom">Mensagem</label>
+              <textarea class="form-control-custom" placeholder="Descreva seu projeto ou dúvida…" required></textarea>
+            </div>
+            <!-- Checkbox -->
+            <div class="mb-4 d-flex gap-2 align-items-start" style="font-size:.82rem;color:var(--text-muted)">
+              <input type="checkbox" id="lgpd" style="margin-top:3px;accent-color:var(--accent);cursor:pointer" required>
+              <label for="lgpd">Concordo com a <a href="#" style="color:var(--accent)">Política de Privacidade</a> e autorizo o uso dos meus dados para contato.</label>
+            </div>
+            <button type="submit" class="btn-submit">
+              Enviar Mensagem 🚀
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-block alt-bg">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-tag">Dúvidas</span>
+      <h2 class="section-title mt-2">Perguntas <span>Frequentes</span></h2>
+      <div class="divider mx-auto"></div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item reveal" style="background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;margin-bottom:.8rem;overflow:hidden">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="background:transparent;color:var(--text);font-family:'Exo 2',sans-serif;font-weight:600;">
+                Qual é o prazo médio de desenvolvimento?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="color:var(--text-muted);font-size:.9rem;">
+                O prazo varia conforme a complexidade do projeto. Projetos simples levam de 4 a 8 semanas; sistemas complexos podem levar de 3 a 12 meses.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item reveal" style="background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;margin-bottom:.8rem;overflow:hidden;transition-delay:.1s">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="background:transparent;color:var(--text);font-family:'Exo 2',sans-serif;font-weight:600;">
+                Vocês oferecem suporte pós-entrega?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="color:var(--text-muted);font-size:.9rem;">
+                Sim! Oferecemos planos de manutenção e suporte com diferentes níveis de SLA para garantir a continuidade e evolução do seu sistema.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item reveal" style="background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;margin-bottom:.8rem;overflow:hidden;transition-delay:.2s">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="background:transparent;color:var(--text);font-family:'Exo 2',sans-serif;font-weight:600;">
+                Como funciona o processo de desenvolvimento?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body" style="color:var(--text-muted);font-size:.9rem;">
+                Utilizamos metodologia ágil (Scrum/Kanban): levantamento de requisitos → prototipagem → desenvolvimento em sprints → testes → entrega → suporte.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 reveal">
+        <div class="footer-brand">
+          <svg viewBox="0 0 60 60" fill="none">
+            <polygon points="30,4 56,16 56,44 30,56 4,44 4,16" fill="none" stroke="url(#ffc)" stroke-width="2"/>
+            <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="url(#ffc)" font-family="Orbitron,sans-serif" font-size="9" font-weight="900">BRE</text>
+            <defs><linearGradient id="ffc" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+          </svg>
+          BR ENGINE
+        </div>
+        <p class="footer-desc">Desenvolvendo soluções digitais modernas, eficientes e personalizadas.</p>
+      </div>
+      <div class="col-6 col-lg-2 reveal">
+        <h6 class="footer-heading">Navegação</h6>
+        <ul class="footer-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 reveal">
+        <h6 class="footer-heading">Serviços</h6>
+        <ul class="footer-links">
+          <li><a href="#">Dev Web</a></li>
+          <li><a href="#">Mobile</a></li>
+          <li><a href="#">Cloud</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 reveal">
+        <h6 class="footer-heading">Redes Sociais</h6>
+        <div class="social-links">
+          <a class="social-link" href="#">📸</a>
+          <a class="social-link" href="#">▶️</a>
+          <a class="social-link" href="#">👥</a>
+          <a class="social-link" href="#">💼</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 <span>BR ENGINE</span> | Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

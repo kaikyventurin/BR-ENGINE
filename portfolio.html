@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | BR ENGINE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Loading Overlay -->
+<div id="loading-overlay">
+  <svg class="loader-logo" viewBox="0 0 80 80" fill="none">
+    <polygon points="40,6 74,22 74,58 40,74 6,58 6,22" fill="none" stroke="url(#lg2)" stroke-width="3"/>
+    <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="url(#lg2)" font-family="Orbitron,sans-serif" font-size="11" font-weight="900">BRE</text>
+    <defs><linearGradient id="lg2" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+  </svg>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <p class="loader-text">Carregando portfólio…</p>
+</div>
+
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <svg class="brand-logo" viewBox="0 0 60 60" fill="none">
+        <polygon points="30,4 56,16 56,44 30,56 4,44 4,16" fill="none" stroke="url(#bnp)" stroke-width="2.5"/>
+        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="url(#bnp)" font-family="Orbitron,sans-serif" font-size="9" font-weight="900">BRE</text>
+        <defs><linearGradient id="bnp" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+      </svg>
+      BR ENGINE
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navPort" aria-label="Menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navPort">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#sobre">Sobre Nós</a></li>
+        <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfólio</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <form class="nav-search d-flex" id="searchForm">
+          <input class="form-control" type="search" placeholder="Buscar…" id="searchInput">
+          <button class="btn-search" type="submit">🔍</button>
+        </form>
+        <button id="themeToggle" aria-label="Alternar tema">☀️</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div class="breadcrumb-custom mb-3">
+      <a href="index.html">Início</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Portfólio</span>
+    </div>
+    <h1 class="page-hero-title">Nosso Portfólio</h1>
+    <p class="page-hero-sub">Projetos & Soluções desenvolvidas com tecnologia de ponta</p>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="section-block">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-tag">Projetos</span>
+      <h2 class="section-title mt-2">Galeria de <span>Projetos</span></h2>
+      <div class="divider mx-auto"></div>
+
+      <!-- Filter buttons -->
+      <div class="d-flex gap-2 justify-content-center flex-wrap mt-4" id="filterBtns">
+        <button class="btn-outline-glow active-filter" data-filter="all">Todos</button>
+        <button class="btn-outline-glow" data-filter="web">Web</button>
+        <button class="btn-outline-glow" data-filter="mobile">Mobile</button>
+        <button class="btn-outline-glow" data-filter="cloud">Cloud</button>
+      </div>
+    </div>
+
+    <div class="row g-4" id="portfolioGrid">
+      <div class="col-sm-6 col-lg-4 reveal portfolio-item" data-category="web">
+        <div class="portfolio-card">
+          <div class="card-img-wrap">
+            <img src="img/desenvolvimento-softwares-o-que-e-como-funciona-dicas.jpg" alt="Sistema Web" loading="lazy">
+            <div class="card-overlay"><span class="overlay-icon">🖥️</span></div>
+          </div>
+          <div class="card-body-custom">
+            <span class="card-badge">Web</span>
+            <h5>Sistema Web Corporativo</h5>
+            <p>Plataforma completa de gestão empresarial com dashboard em tempo real e relatórios automatizados.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 reveal portfolio-item" data-category="mobile" style="transition-delay:.1s">
+        <div class="portfolio-card">
+          <div class="card-img-wrap">
+            <img src="img/banner-de-desenvolvimento-de-aplicativos_33099-1720.avif" alt="App Mobile" loading="lazy">
+            <div class="card-overlay"><span class="overlay-icon">📱</span></div>
+          </div>
+          <div class="card-body-custom">
+            <span class="card-badge">Mobile</span>
+            <h5>App Mobile Nativo</h5>
+            <p>Aplicativo multiplataforma com UI/UX refinada, notificações push e integração com APIs externas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 reveal portfolio-item" data-category="cloud" style="transition-delay:.2s">
+        <div class="portfolio-card">
+          <div class="card-img-wrap">
+            <img src="img/origin-mode1-760x362.jpg" alt="Cloud System" loading="lazy">
+            <div class="card-overlay"><span class="overlay-icon">☁️</span></div>
+          </div>
+          <div class="card-body-custom">
+            <span class="card-badge">Cloud</span>
+            <h5>Infraestrutura Cloud</h5>
+            <p>Migração e arquitetura cloud com alta disponibilidade, auto-scaling e monitoramento 24/7.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 reveal portfolio-item" data-category="web" style="transition-delay:.3s">
+        <div class="portfolio-card">
+          <div class="card-img-wrap" style="background:linear-gradient(135deg,#0d1224,#1a1a2e);height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;">🛒</div>
+          <div class="card-body-custom">
+            <span class="card-badge">Web</span>
+            <h5>E-Commerce Avançado</h5>
+            <p>Loja virtual completa com gateway de pagamento, gerenciamento de estoque e analytics de vendas.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 reveal portfolio-item" data-category="mobile" style="transition-delay:.4s">
+        <div class="portfolio-card">
+          <div class="card-img-wrap" style="background:linear-gradient(135deg,#0d1224,#1a1a2e);height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;">🏥</div>
+          <div class="card-body-custom">
+            <span class="card-badge">Mobile</span>
+            <h5>App de Saúde</h5>
+            <p>Aplicativo de gestão de saúde com agendamentos, prontuários digitais e telemedicina integrada.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 reveal portfolio-item" data-category="cloud" style="transition-delay:.5s">
+        <div class="portfolio-card">
+          <div class="card-img-wrap" style="background:linear-gradient(135deg,#0d1224,#1a1a2e);height:200px;display:flex;align-items:center;justify-content:center;font-size:4rem;">🔐</div>
+          <div class="card-body-custom">
+            <span class="card-badge">Cloud</span>
+            <h5>Sistema de Segurança</h5>
+            <p>Plataforma de cibersegurança com detecção de ameaças em tempo real e resposta automatizada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="section-block alt-bg">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-tag">Apresentação</span>
+      <h2 class="section-title mt-2">Conheça a <span>BR ENGINE</span></h2>
+      <div class="divider mx-auto"></div>
+      <p class="section-desc mx-auto">Veja nosso processo de desenvolvimento de software na prática.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-9 reveal">
+        <div class="video-wrapper">
+          <video controls preload="metadata">
+            <source src="img/01 - Etapas do desenvolvimento de um sistema _ software - Raphael Pontes (720p, h264, youtube).mp4" type="video/mp4">
+            Seu navegador não suporta vídeo HTML5.
+          </video>
+        </div>
+        <p class="text-center mt-3" style="color:var(--text-muted);font-size:.9rem;">
+          Vídeo demonstrativo do processo de desenvolvimento de um software.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE -->
+<section class="section-block">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-tag">Tecnologias</span>
+      <h2 class="section-title mt-2">Tipos de <span>Software</span></h2>
+      <div class="divider mx-auto"></div>
+    </div>
+    <div class="table-responsive reveal">
+      <table class="table-glow">
+        <thead>
+          <tr><th>Tipo</th><th>Descrição</th><th>Exemplo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>💻 Sistema</td><td>Gerencia hardware e sistema</td><td>Windows, Linux</td></tr>
+          <tr><td>📱 Aplicação</td><td>Uso do usuário final</td><td>WhatsApp</td></tr>
+          <tr><td>⚙️ Programação</td><td>Desenvolvimento de software</td><td>VS Code</td></tr>
+          <tr><td>🌐 Web</td><td>Sistemas online</td><td>Sites e plataformas</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 reveal">
+        <div class="footer-brand">
+          <svg viewBox="0 0 60 60" fill="none">
+            <polygon points="30,4 56,16 56,44 30,56 4,44 4,16" fill="none" stroke="url(#fpf)" stroke-width="2"/>
+            <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="url(#fpf)" font-family="Orbitron,sans-serif" font-size="9" font-weight="900">BRE</text>
+            <defs><linearGradient id="fpf" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+          </svg>
+          BR ENGINE
+        </div>
+        <p class="footer-desc">Desenvolvendo soluções digitais modernas, eficientes e personalizadas.</p>
+      </div>
+      <div class="col-6 col-lg-2 reveal" style="transition-delay:.1s">
+        <h6 class="footer-heading">Navegação</h6>
+        <ul class="footer-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 reveal" style="transition-delay:.2s">
+        <h6 class="footer-heading">Categorias</h6>
+        <ul class="footer-links">
+          <li><a href="#">Web</a></li>
+          <li><a href="#">Mobile</a></li>
+          <li><a href="#">Cloud</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 reveal" style="transition-delay:.3s">
+        <h6 class="footer-heading">Redes Sociais</h6>
+        <div class="social-links">
+          <a class="social-link" href="#">📸</a>
+          <a class="social-link" href="#">▶️</a>
+          <a class="social-link" href="#">👥</a>
+          <a class="social-link" href="#">💼</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 <span>BR ENGINE</span> | Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+// Portfolio filter
+document.querySelectorAll('#filterBtns button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#filterBtns button').forEach(b => b.classList.remove('active-filter'));
+    btn.classList.add('active-filter');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+      const match = filter === 'all' || item.dataset.category === filter;
+      item.style.transition = 'opacity .35s, transform .35s';
+      item.style.opacity = match ? '1' : '0.15';
+      item.style.transform = match ? 'scale(1)' : 'scale(.95)';
+      item.style.pointerEvents = match ? '' : 'none';
+    });
+  });
+});
+document.querySelector('[data-filter="all"]').click();
+</script>
+</body>
+</html>

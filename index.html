@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BR ENGINE — Desenvolvimento de Software Personalizado">
+  <title>BR ENGINE | Início</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Loading Overlay -->
+<div id="loading-overlay">
+  <svg class="loader-logo" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="40,6 74,22 74,58 40,74 6,58 6,22" fill="none" stroke="url(#lg1)" stroke-width="3"/>
+    <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="url(#lg1)" font-family="Orbitron,sans-serif" font-size="11" font-weight="900">BRE</text>
+    <defs>
+      <linearGradient id="lg1" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#00e5ff"/><stop offset="1" stop-color="#7c3aed"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <p class="loader-text">Inicializando sistemas…</p>
+</div>
+
+<!-- Particles -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ══════════ NAVBAR ══════════ -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <!-- Brand / Logo -->
+    <a class="navbar-brand" href="index.html">
+      <svg class="brand-logo" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="30,4 56,16 56,44 30,56 4,44 4,16" fill="none" stroke="url(#bnl)" stroke-width="2.5"/>
+        <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="url(#bnl)" font-family="Orbitron,sans-serif" font-size="9" font-weight="900">BRE</text>
+        <defs>
+          <linearGradient id="bnl" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#00e5ff"/><stop offset="1" stop-color="#7c3aed"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      BR ENGINE
+    </a>
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-label="Menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#inicio">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+        <li class="nav-item"><a class="nav-link" href="#software">Software</a></li>
+        <li class="nav-item"><a class="nav-link" href="#novidades">Novidades</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Páginas</a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="portfolio.html">Portfólio</a></li>
+            <li><a class="dropdown-item" href="contato.html">Contato</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="d-flex align-items-center gap-2">
+        <form class="nav-search d-flex" id="searchForm">
+          <input class="form-control" type="search" placeholder="Buscar…" id="searchInput" aria-label="Buscar">
+          <button class="btn-search" type="submit">🔍</button>
+        </form>
+        <button id="themeToggle" aria-label="Alternar tema">☀️</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="inicio">
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+
+  <div class="hero-content">
+    <!-- SVG Logo grande -->
+    <svg class="hero-logo-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="60,8 112,32 112,88 60,112 8,88 8,32" fill="none" stroke="url(#hl)" stroke-width="3"/>
+      <polygon points="60,20 98,40 98,80 60,100 22,80 22,40" fill="url(#hlfill)" opacity=".08"/>
+      <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="url(#hl)" font-family="Orbitron,sans-serif" font-size="18" font-weight="900">BRE</text>
+      <circle cx="60" cy="8" r="4" fill="#00e5ff"/>
+      <circle cx="112" cy="32" r="4" fill="#7c3aed"/>
+      <circle cx="112" cy="88" r="4" fill="#00e5ff"/>
+      <circle cx="60" cy="112" r="4" fill="#7c3aed"/>
+      <circle cx="8" cy="88" r="4" fill="#00e5ff"/>
+      <circle cx="8" cy="32" r="4" fill="#7c3aed"/>
+      <defs>
+        <linearGradient id="hl" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#00e5ff"/><stop offset="1" stop-color="#7c3aed"/>
+        </linearGradient>
+        <linearGradient id="hlfill" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#00e5ff"/><stop offset="1" stop-color="#7c3aed"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <h1 class="hero-title">BR ENGINE</h1>
+    <p class="hero-subtitle" id="typewriter">Desenvolvendo soluções digitais modernas.</p>
+
+    <div class="hero-buttons">
+      <a href="#sobre" class="btn-primary-glow">Conheça a Empresa</a>
+      <a href="portfolio.html" class="btn-outline-glow">Ver Portfólio</a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ══════════ STATS ══════════ -->
+<div class="stats-bar position-relative" style="z-index:2">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3 stat-item reveal">
+        <div class="stat-number" data-target="120" data-suffix="+">0+</div>
+        <div class="stat-label">Projetos Entregues</div>
+      </div>
+      <div class="col-6 col-md-3 stat-item reveal">
+        <div class="stat-number" data-target="85" data-suffix="%">0%</div>
+        <div class="stat-label">Satisfação de Clientes</div>
+      </div>
+      <div class="col-6 col-md-3 stat-item reveal">
+        <div class="stat-number" data-target="8" data-suffix=" anos">0 anos</div>
+        <div class="stat-label">de Mercado</div>
+      </div>
+      <div class="col-6 col-md-3 stat-item reveal">
+        <div class="stat-number" data-target="40" data-suffix="+">0+</div>
+        <div class="stat-label">Profissionais</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SOBRE NÓS ══════════ -->
+<section id="sobre" class="section-block">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 reveal">
+        <span class="section-tag">Quem Somos</span>
+        <h2 class="section-title mt-2">Sobre a <span>BR ENGINE</span></h2>
+        <div class="divider"></div>
+        <p class="section-desc mb-4">
+          Nossa empresa foi fundada com o objetivo de desenvolver soluções em software personalizadas
+          para clientes que buscam inovação, eficiência e qualidade. Transformamos ideias em realidade digital.
+        </p>
+        <a href="contato.html" class="btn-primary-glow" style="display:inline-block; text-decoration:none;">Fale Conosco</a>
+      </div>
+      <div class="col-lg-7">
+        <div class="row g-3">
+          <div class="col-sm-6 reveal" style="transition-delay:.1s">
+            <div class="about-card">
+              <div class="about-icon">🎯</div>
+              <h5>Missão</h5>
+              <p>Transformar negócios através de soluções tecnológicas inovadoras e personalizadas.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 reveal" style="transition-delay:.2s">
+            <div class="about-card">
+              <div class="about-icon">🔭</div>
+              <h5>Visão</h5>
+              <p>Ser referência nacional em desenvolvimento de software até 2030.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 reveal" style="transition-delay:.3s">
+            <div class="about-card">
+              <div class="about-icon">💎</div>
+              <h5>Valores</h5>
+              <p>Ética, qualidade, inovação e comprometimento com cada cliente.</p>
+            </div>
+          </div>
+          <div class="col-sm-6 reveal" style="transition-delay:.4s">
+            <div class="about-card">
+              <div class="about-icon">🚀</div>
+              <h5>Tecnologia</h5>
+              <p>Utilizamos as mais modernas ferramentas e metodologias ágeis do mercado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SOFTWARE ══════════ -->
+<section id="software" class="section-block alt-bg">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-tag">Conhecimento</span>
+      <h2 class="section-title mt-2">O que é um <span>Software?</span></h2>
+      <div class="divider mx-auto"></div>
+      <p class="section-desc mx-auto">
+        Software é o conjunto de instruções, dados e programas responsáveis por controlar o funcionamento de dispositivos eletrônicos,
+        permitindo a execução de tarefas específicas e a interação entre usuário e hardware.
+      </p>
+    </div>
+
+    <div class="row g-4 mb-5">
+      <div class="col-md-4 reveal" style="transition-delay:.1s">
+        <div class="feature-card">
+          <span class="feature-icon">🖥️</span>
+          <h5>Software de Sistema</h5>
+          <p>Gerencia o hardware e os recursos do sistema operacional. Exemplos: Windows, Linux, macOS.</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay:.2s">
+        <div class="feature-card">
+          <span class="feature-icon">📱</span>
+          <h5>Software de Aplicação</h5>
+          <p>Voltado ao uso direto do usuário para tarefas cotidianas. Exemplos: WhatsApp, Chrome.</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay:.3s">
+        <div class="feature-card">
+          <span class="feature-icon">⚙️</span>
+          <h5>Software de Programação</h5>
+          <p>Ferramentas para criação de outros softwares. Exemplos: VS Code, IntelliJ, Eclipse.</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay:.4s">
+        <div class="feature-card">
+          <span class="feature-icon">🌐</span>
+          <h5>Software Web</h5>
+          <p>Acessado via navegador, roda na nuvem sem necessidade de instalação local.</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay:.5s">
+        <div class="feature-card">
+          <span class="feature-icon">☁️</span>
+          <h5>Software Cloud</h5>
+          <p>Soluções em nuvem escaláveis e disponíveis 24/7 com alta disponibilidade.</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay:.6s">
+        <div class="feature-card">
+          <span class="feature-icon">🤖</span>
+          <h5>Software com IA</h5>
+          <p>Inteligência artificial integrada para automação e tomada de decisão inteligente.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabela -->
+    <div class="reveal">
+      <h3 class="section-title text-center mb-4">Tipos que <span>Desenvolvemos</span></h3>
+      <div class="table-responsive">
+        <table class="table-glow">
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Descrição</th>
+              <th>Exemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>💻 Sistema</td><td>Gerenciamento de hardware e recursos</td><td>Windows, Linux</td></tr>
+            <tr><td>📲 Aplicação</td><td>Uso direto do usuário final</td><td>WhatsApp, Navegadores</td></tr>
+            <tr><td>🌐 Web</td><td>Aplicações acessadas via navegador</td><td>Sistemas online</td></tr>
+            <tr><td>📱 Mobile</td><td>Apps para dispositivos móveis</td><td>Android e iOS</td></tr>
+            <tr><td>🏢 Personalizado</td><td>Soluções sob medida para empresas</td><td>Sistemas empresariais</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ NOVIDADES ══════════ -->
+<section id="novidades" class="section-block">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-tag">Atualizações</span>
+      <h2 class="section-title mt-2"><span>Novidades</span></h2>
+      <div class="divider mx-auto"></div>
+      <p class="section-desc mx-auto">Acompanhe as últimas atualizações sobre nossos projetos, tecnologias e soluções desenvolvidas.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 reveal" style="transition-delay:.1s">
+        <div class="feature-card h-100">
+          <span class="feature-icon">🧠</span>
+          <h5>IA no Desenvolvimento</h5>
+          <p>Integramos modelos de linguagem ao nosso processo de desenvolvimento para acelerar entregas e reduzir erros.</p>
+          <div class="mt-3" style="font-size:.75rem; color:var(--accent)">Jan 2026</div>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay:.2s">
+        <div class="feature-card h-100">
+          <span class="feature-icon">🔐</span>
+          <h5>Segurança Avançada</h5>
+          <p>Novo módulo de cibersegurança para proteger dados de clientes com criptografia de ponta a ponta.</p>
+          <div class="mt-3" style="font-size:.75rem; color:var(--accent)">Mar 2026</div>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay:.3s">
+        <div class="feature-card h-100">
+          <span class="feature-icon">📊</span>
+          <h5>Dashboard Analytics</h5>
+          <p>Plataforma de análise de dados em tempo real com relatórios automatizados e insights preditivos.</p>
+          <div class="mt-3" style="font-size:.75rem; color:var(--accent)">Abr 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 reveal">
+        <div class="footer-brand">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="30,4 56,16 56,44 30,56 4,44 4,16" fill="none" stroke="url(#fl)" stroke-width="2"/>
+            <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="url(#fl)" font-family="Orbitron,sans-serif" font-size="9" font-weight="900">BRE</text>
+            <defs><linearGradient id="fl" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop stop-color="#00e5ff"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+          </svg>
+          BR ENGINE
+        </div>
+        <p class="footer-desc">Desenvolvendo soluções digitais modernas, eficientes e personalizadas para empresas e negócios.</p>
+      </div>
+      <div class="col-6 col-lg-2 reveal" style="transition-delay:.1s">
+        <h6 class="footer-heading">Links Rápidos</h6>
+        <ul class="footer-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#software">Software</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2 reveal" style="transition-delay:.2s">
+        <h6 class="footer-heading">Serviços</h6>
+        <ul class="footer-links">
+          <li><a href="#">Dev Web</a></li>
+          <li><a href="#">Apps Mobile</a></li>
+          <li><a href="#">Cloud</a></li>
+          <li><a href="#">Consultoria</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 reveal" style="transition-delay:.3s">
+        <h6 class="footer-heading">Redes Sociais</h6>
+        <div class="social-links">
+          <a class="social-link" href="#" title="Instagram">📸</a>
+          <a class="social-link" href="#" title="YouTube">▶️</a>
+          <a class="social-link" href="#" title="Facebook">👥</a>
+          <a class="social-link" href="#" title="LinkedIn">💼</a>
+          <a class="social-link" href="#" title="GitHub">💻</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 <span>BR ENGINE</span> | Todos os direitos reservados. Feito com 💙 em tecnologia.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+</body>
+</html>
